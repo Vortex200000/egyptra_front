@@ -1,0 +1,395 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tours": "Tour",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "login": "Accedi",
+    "register": "Registrati",
+    "logout": "Esci",
+    "profile": "Profilo",
+    "bookings": "Le Mie Prenotazioni",
+    "chat": "Chat",
+    "language": "Lingua"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "cancel": "Annulla",
+    "submit": "Invia",
+    "back": "Indietro",
+    "next": "Avanti",
+    "close": "Chiudi",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "select": "Seleziona"
+  },
+  "home": {
+    "hero": {
+      "title": "Esplora i Tesori Nascosti dell'Egitto",
+      "subtitle": "I ricordi iniziano qui.",
+      "cta": "Esplora i Tour",
+      "learn_more": "Scopri di più"
+    },
+    "features": {
+      "title": "Perché scegliere True EGYPET_RA TOURS ?",
+      "subtitle": "Ci impegniamo a offrirti esperienze di viaggio eccezionali che superano le tue aspettative.",
+      "expert_guides": "Guide Esperte",
+      "expert_guides_desc": "Guide locali professionali con una profonda conoscenza delle destinazioni e delle culture.",
+      "safe_secure": "Sicuro e Protetto",
+      "safe_secure_desc": "La tua sicurezza è la nostra priorità con assicurazione completa e protocolli di sicurezza.",
+      "award_winning": "Premiato",
+      "award_winning_desc": "Eccellenza riconosciuta nei servizi di viaggio con numerosi premi del settore.",
+      "small_groups": "Piccoli Gruppi",
+      "small_groups_desc": "Gruppi ridotti per un'attenzione personalizzata e un'esperienza autentica."
+    },
+    "featured": {
+      "title": "Tour in Evidenza",
+      "subtitle": "Avventure selezionate che mostrano il meglio che il nostro pianeta ha da offrire.",
+      "cta": "Vedi Tutti i Tour"
+    }
+  },
+
+  "brand": {
+    "name": "EGYPET_RA TOURS"
+  },
+  "booking": {
+    "title": "Prenota la Tua Avventura",
+    "subtitle": "Completa la tua prenotazione per {{tourName}}",
+    "personal_info": "Informazioni Personali",
+    "tour_details": "Dettagli del Tour",
+    "payment_info": "Informazioni di Pagamento",
+    "first_name": "Nome",
+    "last_name": "Cognome",
+    "email": "Indirizzo Email",
+    "phone": "Numero di Telefono",
+    "travelers": "Numero di Viaggiatori",
+    "preferred_date": "Data e Ora Preferite",
+    "special_requests": "Richieste Speciali",
+    "booking_summary": "Riepilogo Prenotazione",
+    "duration": "Durata",
+    "price_per_person": "Prezzo per persona",
+    "total": "Totale",
+    "submit_booking": "Invia Richiesta di Prenotazione",
+    "processing": "Elaborazione...",
+    "success_message": "La tua prenotazione è stata confermata. Controlla la tua email per i dettagli.",
+    "error_message": "Si è verificato un errore durante l'elaborazione della prenotazione.",
+    "missing_info": "Compila tutti i campi obbligatori.",
+    "processing_message": "Attendere mentre confermiamo la tua prenotazione..."
+  },
+  "bookings": {
+    "title": "Le mie prenotazioni",
+    "subtitle": "Gestisci le tue prossime avventure e visualizza la cronologia delle prenotazioni.",
+    "tour_date": "Data del tour",
+    "travelers": "Viaggiatori",
+    "total_price": "Prezzo totale",
+    "ref": "Riferimento prenotazione",
+    "download_voucher": "Scarica voucher",
+    "view_itinerary": "Vedi itinerario",
+    "manage": "Gestisci prenotazione",
+    "cancel": "Annulla prenotazione",
+    "cancelled": "Prenotazione annullata",
+    "support": "Contatta il supporto",
+    "none": "Nessuna prenotazione",
+    "none_desc": "Inizia a esplorare i nostri fantastici tour e prenota la tua prossima avventura!",
+    "browse": "Sfoglia i tour"
+  },
+  "tours": {
+    "header": {
+      "title": "Scopri Tour Straordinari",
+      "subtitle": "Esplora la nostra collezione di tour accuratamente selezionati e trova la tua prossima avventura."
+    },
+    "filters": {
+      "search_placeholder": "Cerca tour, destinazioni o attività...",
+      "category": "Categoria",
+      "sort_by": "Ordina per"
+    },
+    "categories": {
+      "all": "Tutti",
+      "easy": "Facile",
+      "moderate": "Moderato",
+      "difficult": "Difficile"
+    },
+    "sort": {
+      "name": "Nome A-Z",
+      "price_low": "Prezzo: dal più basso",
+      "price_high": "Prezzo: dal più alto",
+      "rating": "Più votati",
+      "duration": "Durata"
+    },
+
+    "results": "Mostrando risultati",
+    "results_in_category": "in {{category}}",
+    "results_matching": "corrispondenti a \"{{search}}\""
+  },
+
+  "tour": {
+    "loading": "Caricamento dettagli del tour...",
+    "back": "Torna ai tour",
+    "overview": "Panoramica del tour",
+    "duration": "Durata",
+    "group_size": "Dimensione del gruppo",
+    "group_size_value": "Fino a {{count}} persone",
+    "reviews": "{{count}} recensioni",
+    "available_dates": "Date disponibili",
+    "highlights": "Punti salienti del tour",
+    "itinerary": "Itinerario dettagliato",
+    "per_person": "a persona",
+    "book": "Prenota questo tour",
+    "ask": "Fai domande",
+    "not_found": {
+      "title": "Tour non trovato",
+      "description": "Il tour che stai cercando non esiste.",
+      "back": "Torna ai tour"
+    }
+  },
+
+  "errors": {
+    "tour_not_found": "Tour Non Trovato",
+    "tour_not_found_desc": "Il tour che stai cercando non esiste.",
+    "network_error": "Errore di Rete",
+    "something_went_wrong": "Qualcosa è andato storto",
+    "try_again": "Riprova"
+  },
+
+  "auth": {
+    "signIn": "Accedi",
+    "signUp": "Registrati",
+    "signOut": "Esci",
+
+    "welcomeTitle": "Benvenuto su EGYPET_RA TOURS",
+    "welcomeSubtitle": "Accedi per prenotare avventure straordinarie",
+    "signInTab": "Accedi",
+    "signUpTab": "Registrati",
+
+    "signingIn": "Accesso in corso...",
+    "createAccount": "Crea account",
+    "creatingAccount": "Creazione account in corso...",
+    "email": "Email",
+    "emailPlaceholder": "Inserisci la tua email",
+    "password": "Password",
+    "passwordPlaceholder": "Inserisci la tua password",
+    "passwordCreate": "Crea una password (minimo 6 caratteri)",
+    "confirmPassword": "Conferma password",
+    "confirmPasswordPlaceholder": "Conferma la tua password",
+    "passwordsMismatch": "Le password non corrispondono",
+    "username": "Nome utente",
+    "usernamePlaceholder": "Scegli un nome utente",
+    "firstName": "Nome",
+    "firstNamePlaceholder": "Inserisci il nome",
+    "lastName": "Cognome",
+    "lastNamePlaceholder": "Inserisci il cognome"
+  },
+
+  "about": {
+    "hero": {
+      "title": "Chi Siamo - EGYPET_RA TOURS",
+      "subtitle": "Siamo appassionati nel creare esperienze di viaggio indimenticabili che ti connettano con le destinazioni e le culture più straordinarie del mondo."
+    },
+    "story": {
+      "title": "La Nostra Storia",
+      "p1": "Fondata nel 2025 da un gruppo di viaggiatori appassionati, EGYPET_RA TOURS è nata da una semplice convinzione: che il viaggio abbia il potere di trasformare la vita, ampliare le prospettive e creare ricordi duraturi. Ciò che è iniziato come una piccola agenzia turistica locale è cresciuto fino a diventare una piattaforma globale che connette anime avventurose con esperienze straordinarie in tutto il mondo.",
+      "p2": "Oggi abbiamo aiutato oltre 50.000 viaggiatori a scoprire gemme nascoste, immergersi nelle culture locali e creare storie da condividere per tutta la vita. Il nostro impegno rimane lo stesso: offrire esperienze di viaggio autentiche, sostenibili e trasformative che portino benefici sia ai nostri viaggiatori che alle comunità che visitiamo."
+    },
+    "values": {
+      "title": "I Nostri Valori",
+      "subtitle": "Tutto ciò che facciamo è guidato da questi principi fondamentali che plasmano il nostro approccio al viaggio.",
+      "items": {
+        "authentic": {
+          "title": "Esperienze Autentiche",
+          "desc": "Crediamo in connessioni autentiche con le culture e le comunità locali."
+        },
+        "sustainable": {
+          "title": "Turismo Sostenibile",
+          "desc": "Ci impegniamo per un viaggio responsabile che protegga il nostro pianeta."
+        },
+        "service": {
+          "title": "Servizio Personalizzato",
+          "desc": "Ogni viaggiatore merita attenzione e cura personalizzata."
+        },
+        "excellence": {
+          "title": "Eccellenza",
+          "desc": "Miriamo alla perfezione in ogni dettaglio del tuo viaggio."
+        }
+      }
+    }
+  },
+
+  "contact": {
+    "hero": {
+      "title": "Contattaci",
+      "subtitle": "Hai domande sui nostri tour? Hai bisogno di aiuto per pianificare la tua avventura? Siamo qui per aiutarti!"
+    },
+    "info": {
+      "phone": {
+        "title": "Chiamaci",
+        "main": "Ufficio principale:"
+      },
+      "email": {
+        "title": "Scrivici",
+        "support": "Supporto:"
+      }
+    },
+    "form": {
+      "title": "Inviaci un Messaggio",
+      "subtitle": "Compila il modulo qui sotto e ti risponderemo al più presto.",
+      "name": "Nome completo *",
+      "email": "Indirizzo Email *",
+      "subject": "Oggetto",
+      "message": "Messaggio *",
+      "send": "Invia Messaggio",
+      "placeholders": {
+        "name": "Inserisci il tuo nome completo",
+        "email": "Inserisci la tua email",
+        "subject": "Di cosa si tratta?",
+        "message": "Dicci come possiamo aiutarti..."
+      },
+      "errors": {
+        "missing": {
+          "title": "Informazioni mancanti",
+          "desc": "Per favore compila tutti i campi obbligatori."
+        }
+      },
+      "success": {
+        "title": "Messaggio inviato!",
+        "desc": "Grazie per averci contattato. Ti risponderemo entro 24 ore."
+      }
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "q1": {
+        "q": "Quanto tempo prima dovrei prenotare?",
+        "a": "Consigliamo di prenotare almeno 2-3 mesi prima per i tour internazionali e 4-6 settimane per i tour nazionali per garantire la disponibilità."
+      },
+      "q2": {
+        "q": "Cosa è incluso nel prezzo del tour?",
+        "a": "I prezzi dei tour includono solitamente alloggio, trasporto, attività guidate e alcuni pasti. Controlla i dettagli del singolo tour per le inclusioni specifiche."
+      },
+      "q3": {
+        "q": "Posso personalizzare un tour?",
+        "a": "Assolutamente! Contattaci per discutere itinerari personalizzati in base alle tue preferenze, al numero di persone e al budget."
+      },
+      "q4": {
+        "q": "Cosa succede se devo cancellare?",
+        "a": "La nostra politica di cancellazione varia in base al tour. La maggior parte dei tour offre un rimborso completo se cancellati con oltre 30 giorni di anticipo. Controlla i termini specifici al momento della prenotazione."
+      }
+    }
+  },
+
+  "chat": {
+    "bot": {
+      "welcome": "Ciao! Benvenuto nella chat di supporto di EGYPET_RA TOURS. Sono qui per aiutarti con qualsiasi domanda sui nostri tour, prenotazioni o consigli di viaggio. Come posso aiutarti oggi?",
+      "responses": {
+        "1": "Grazie per la tua domanda! Lascia che ti aiuti. Puoi fornire più dettagli su quale tour o destinazione ti interessa?",
+        "2": "Ottima domanda! I nostri esperti di viaggio sono qui per aiutarti. Stai cercando tour avventurosi, esperienze culturali o vacanze rilassanti al mare?",
+        "3": "Sarò felice di aiutarti con questo. Per richieste di prenotazione specifiche, posso metterti in contatto con i nostri specialisti. Vuoi che lo faccia?",
+        "4": "Grazie per averci contattato! Il nostro team è impegnato a realizzare i tuoi sogni di viaggio. Che tipo di esperienza stai cercando?"
+      }
+    },
+    "quickQuestions": {
+      "1": "Quali tour sono disponibili questo mese?",
+      "2": "Come faccio a prenotare?",
+      "3": "Cosa è incluso nel prezzo del tour?",
+      "4": "Posso cancellare la mia prenotazione?",
+      "5": "Offrite sconti per gruppi?",
+      "6": "Cosa dovrei portare per il mio tour?"
+    },
+    "header": {
+      "title": "Supporto Chat Live",
+      "subtitle": "Ottieni aiuto immediato dai nostri esperti di viaggio. Siamo qui per rispondere alle tue domande e aiutarti a pianificare la tua avventura perfetta."
+    },
+    "status": {
+      "online": "Online"
+    },
+    "input": {
+      "placeholder": "Scrivi qui il tuo messaggio..."
+    },
+    "quick": {
+      "title": "Domande Rapide",
+      "subtitle": "Clicca su una domanda qui sotto per ricevere risposte immediate"
+    },
+    "support": {
+      "title": "Hai bisogno di aiuto immediato?",
+      "call": "Chiamaci",
+      "email": "Supporto Email"
+    },
+    "topics": {
+      "title": "Argomenti Popolari",
+      "booking": "Prenotazioni e Pagamenti",
+      "modifications": "Modifiche al Tour",
+      "requirements": "Requisiti di Viaggio",
+      "cancellation": "Politica di Cancellazione",
+      "group": "Prenotazioni di Gruppo"
+    }
+  },
+
+  "footer": {
+    "companyName": "Esploratore EGYPET_RA TOURS",
+    "companyDescription": "Scopri le destinazioni più incredibili del mondo con i nostri tour esperti e esperienze indimenticabili.",
+    "quickLinks": "Link Rapidi",
+    "links": {
+      "home": "Home",
+      "tours": "Tour",
+      "about": "Chi Siamo",
+      "contact": "Contatti",
+      "bookings": "Le Mie Prenotazioni"
+    },
+    "tourCategories": "Categorie di Tour",
+    "tours": {
+      "beach": "Tour in Spiaggia",
+      "adventure": "Tour Avventura",
+      "cultural": "Tour Culturali",
+      "wildlife": "Tour Faunistici",
+      "city": "Tour Città"
+    },
+    "contactInfo": "Informazioni di Contatto",
+    "contact": {
+      "phone": "+20 109 370 6046",
+      "email": "mimmosafari56@gmail.com",
+      "address": {
+        "line1": "123 Adventure Street",
+        "line2": "Travel City, TC 12345"
+      }
+    },
+    "copyright": "© 2024 Esploratore TourGuide. Tutti i diritti riservati. | Privacy Policy | Termini di Servizio"
+  },
+  "today": "Oggi",
+  "yesterday": "Ieri",
+  "loading_chat": "Caricamento chat...",
+  "sign_in_required": "Accesso richiesto",
+  "sign_in_to_access_chat": "Effettua l'accesso per accedere alla chat",
+  "sign_in": "Accedi",
+  "admin_chat": "Chat Admin",
+  "customer_support": "Assistenza Clienti",
+  "manage_customer_messages": "Gestisci i messaggi dei clienti",
+  "get_help_with_bookings": "Ricevi assistenza per le tue prenotazioni",
+  "connected": "Connesso",
+  "disconnected": "Disconnesso",
+  "chat_messages": "Messaggi Chat",
+  "total_messages": "Totale Messaggi",
+  "unknown_user": "Utente Sconosciuto",
+  "admin": "Admin",
+  "no_messages_yet": "Nessun messaggio",
+  "admin_no_messages_yet": "Non hai ancora ricevuto messaggi",
+  "customer_no_messages_yet": "Non hai ancora inviato messaggi",
+  "reply_to_customer": "Scrivi la tua risposta...",
+  "type_your_message": "Scrivi il tuo messaggio...",
+  "enter_to_send_shift_enter_new_line": "Premi Invio per inviare, Shift + Invio per nuova riga",
+  "online": "Online",
+  "offline": "Offline",
+  "real_time_messaging_active": "Messaggistica in tempo reale attiva",
+  "reconnecting": "Riconnessione...",
+  "user": "Utente",
+  "need_help": "Hai bisogno di aiuto?",
+  "call_us": "Chiamaci",
+  "email_us": "Inviaci una email",
+  "chat_stats": "Statistiche Chat",
+  "from_customers": "Da Clienti",
+  "from_admins": "Da Admin"
+}

@@ -1,0 +1,397 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "profile": "Profile",
+    "bookings": "My Bookings",
+    "chat": "Chat",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "select": "Select"
+  },
+  "home": {
+    "hero": {
+      "title": "Explore Egypt's Hidden Treasures",
+      "subtitle": "Memories Begin Here.",
+      "cta": "Explore Tours",
+      "learn_more": "Learn More"
+    },
+    "features": {
+      "title": "Why Choose True EGYPET_RA TOURS ?",
+      "subtitle": "We're committed to providing you with exceptional travel experiences that exceed your expectations.",
+      "expert_guides": "Expert Guides",
+      "expert_guides_desc": "Professional local guides with deep knowledge of destinations and cultures.",
+      "safe_secure": "Safe & Secure",
+      "safe_secure_desc": "Your safety is our priority with comprehensive insurance and safety protocols.",
+      "award_winning": "Award Winning",
+      "award_winning_desc": "Recognized excellence in travel services with multiple industry awards.",
+      "small_groups": "Small Groups",
+      "small_groups_desc": "Intimate group sizes for personalized attention and authentic experiences."
+    },
+    "featured": {
+      "title": "Featured Tours",
+      "subtitle": "Hand-picked adventures that showcase the best of what our planet has to offer.",
+      "cta": "View All Tours"
+    }
+  },
+  "booking": {
+    "title": "Book Your Adventure",
+    "subtitle": "Complete your booking for {{tourName}}",
+    "personal_info": "Personal Information",
+    "tour_details": "Tour Details",
+    "payment_info": "Payment Information",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "travelers": "Number of Travelers",
+    "preferred_date": "Preferred Date & Time",
+    "special_requests": "Special Requests",
+    "booking_summary": "Booking Summary",
+    "duration": "Duration",
+    "price_per_person": "Price per person",
+    "total": "Total",
+    "submit_booking": "Submit Booking Request",
+    "processing": "Processing...",
+    "success_message": "Your booking has been confirmed. Check your email for details.",
+    "error_message": "There was an error processing your booking.",
+    "missing_info": "Please fill in all required fields.",
+    "processing_message": "Please wait while we confirm your reservation..."
+  },
+
+  "bookings": {
+    "title": "My Bookings",
+    "subtitle": "Manage your upcoming adventures and view your booking history.",
+    "tour_date": "Tour Date",
+    "travelers": "Travelers",
+    "total_price": "Total Price",
+    "ref": "Booking Ref",
+    "download_voucher": "Download Voucher",
+    "view_itinerary": "View Itinerary",
+    "manage": "Manage Booking",
+    "cancel": "Cancel Booking",
+    "cancelled": "Booking Cancelled",
+    "support": "Contact Support",
+    "none": "No Bookings Yet",
+    "none_desc": "Start exploring our amazing tours and book your next adventure!",
+    "browse": "Browse Tours"
+  },
+
+  "brand": {
+    "name": "EGYPET_RA TOURS"
+  },
+  "tours": {
+    "header": {
+      "title": "Discover Amazing Tours",
+      "subtitle": "Explore our collection of carefully curated tours and find your next adventure."
+    },
+    "filters": {
+      "search_placeholder": "Search tours, locations, or activities...",
+      "category": "Category",
+      "sort_by": "Sort by"
+    },
+    "categories": {
+      "all": "All",
+      "easy": "Easy",
+      "moderate": "Moderate",
+      "difficult": "Difficult"
+    },
+    "sort": {
+      "name": "Name A-Z",
+      "price_low": "Price: Low to High",
+      "price_high": "Price: High to Low",
+      "rating": "Highest Rated",
+      "duration": "Duration"
+    },
+    "results": "Showing results",
+    "results_in_category": "in {{category}}",
+    "results_matching": "matching \"{{search}}\""
+  },
+
+  "tour": {
+    "loading": "Loading tour details...",
+    "back": "Back to Tours",
+    "overview": "Tour Overview",
+    "duration": "Duration",
+    "group_size": "Group Size",
+    "group_size_value": "Up to {{count}}",
+    "reviews": "{{count}} Reviews",
+    "available_dates": "Available Dates",
+    "highlights": "Tour Highlights",
+    "itinerary": "Detailed Itinerary",
+    "per_person": "per person",
+    "book": "Book This Tour",
+    "ask": "Ask Questions",
+    "not_found": {
+      "title": "Tour Not Found",
+      "description": "The tour you're looking for doesn't exist.",
+      "back": "Back to Tours"
+    }
+  },
+
+  "errors": {
+    "tour_not_found": "Tour Not Found",
+    "tour_not_found_desc": "The tour you're looking for doesn't exist.",
+    "network_error": "Network Error",
+    "something_went_wrong": "Something went wrong",
+    "try_again": "Try again"
+  },
+
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Register",
+    "signOut": "Sign Out",
+    "welcomeTitle": "Welcome to EGYPET_RA TOURS",
+    "welcomeSubtitle": "Sign in to book amazing adventures",
+    "signInTab": "Sign In",
+    "signUpTab": "Sign Up",
+
+    "signingIn": "Signing In...",
+    "createAccount": "Create Account",
+    "creatingAccount": "Creating Account...",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordCreate": "Create a password (min 6 characters)",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "passwordsMismatch": "Passwords do not match",
+    "username": "Username",
+    "usernamePlaceholder": "Choose a username",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "First name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Last name"
+  },
+
+  "about": {
+    "hero": {
+      "title": "About EGYPET_RA TOURS",
+      "subtitle": "We're passionate about creating unforgettable travel experiences that connect you with the world's most amazing destinations and cultures."
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "Founded in 2025 by a group of passionate travelers, EGYPET_RA TOURS was born from a simple belief: that travel has the power to transform lives, broaden perspectives, and create lasting memories. What started as a small local tour company has grown into a global platform connecting adventurous souls with extraordinary experiences around the world.",
+      "p2": "Today, we've helped over 50,000 travelers discover hidden gems, immerse themselves in local cultures, and create stories they'll share for a lifetime. Our commitment remains the same: to provide authentic, sustainable, and transformative travel experiences that benefit both our travelers and the communities we visit."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "Everything we do is guided by these core principles that shape our approach to travel.",
+      "items": {
+        "authentic": {
+          "title": "Authentic Experiences",
+          "desc": "We believe in genuine connections with local cultures and communities."
+        },
+        "sustainable": {
+          "title": "Sustainable Tourism",
+          "desc": "We're committed to responsible travel that protects our planet."
+        },
+        "service": {
+          "title": "Personal Service",
+          "desc": "Every traveler deserves personalized attention and care."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "desc": "We strive for perfection in every detail of your journey."
+        }
+      }
+    }
+  },
+
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "Have questions about our tours? Need help planning your adventure? We're here to help!"
+    },
+    "info": {
+      "phone": {
+        "title": "Call Us",
+        "main": "Main Office:"
+      },
+      "email": {
+        "title": "Email Us",
+        "support": "Support:"
+      }
+    },
+    "form": {
+      "title": "Send us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you as soon as possible.",
+      "name": "Full Name *",
+      "email": "Email Address *",
+      "subject": "Subject",
+      "message": "Message *",
+      "send": "Send Message",
+      "placeholders": {
+        "name": "Enter your full name",
+        "email": "Enter your email",
+        "subject": "What is this regarding?",
+        "message": "Tell us how we can help you..."
+      },
+      "errors": {
+        "missing": {
+          "title": "Missing Information",
+          "desc": "Please fill in all required fields."
+        }
+      },
+      "success": {
+        "title": "Message Sent!",
+        "desc": "Thank you for contacting us. We'll get back to you within 24 hours."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "q": "How far in advance should I book?",
+        "a": "We recommend booking at least 2-3 months in advance for international tours and 4-6 weeks for domestic tours to ensure availability."
+      },
+      "q2": {
+        "q": "What's included in the tour price?",
+        "a": "Tour prices typically include accommodation, transportation, guided activities, and some meals. Check each tour's details for specific inclusions."
+      },
+      "q3": {
+        "q": "Can I customize a tour?",
+        "a": "Absolutely! Contact us to discuss custom itineraries tailored to your preferences, group size, and budget."
+      },
+      "q4": {
+        "q": "What if I need to cancel?",
+        "a": "Our cancellation policy varies by tour. Most tours offer full refunds if cancelled 30+ days in advance. Check specific terms when booking."
+      }
+    }
+  },
+
+  "chat": {
+    "bot": {
+      "welcome": "Hello! Welcome to EGYPET_RA TOURS live chat support. I'm here to help you with any questions about our tours, bookings, or travel advice. How can I assist you today?",
+      "responses": {
+        "1": "Thank you for your question! Let me help you with that. Can you provide more details about which tour or destination you're interested in?",
+        "2": "That's a great question! Our travel experts are here to help. Are you looking for adventure tours, cultural experiences, or relaxing beach getaways?",
+        "3": "I'd be happy to assist you with that. For specific booking inquiries, I can connect you with our booking specialists. Would you like me to do that?",
+        "4": "Thanks for reaching out! Our team is committed to making your travel dreams come true. What type of experience are you looking for?"
+      }
+    },
+    "quickQuestions": {
+      "1": "What tours are available this month?",
+      "2": "How do I make a booking?",
+      "3": "What's included in the tour price?",
+      "4": "Can I cancel my booking?",
+      "5": "Do you offer group discounts?",
+      "6": "What should I pack for my tour?"
+    },
+    "header": {
+      "title": "Live Chat Support",
+      "subtitle": "Get instant help from our travel experts. We're here to answer your questions and help plan your perfect adventure."
+    },
+    "status": {
+      "online": "Online"
+    },
+    "input": {
+      "placeholder": "Type your message here..."
+    },
+    "quick": {
+      "title": "Quick Questions",
+      "subtitle": "Click on any question below to get instant answers"
+    },
+    "support": {
+      "title": "Need Immediate Help?",
+      "call": "Call Us",
+      "email": "Email Support"
+    },
+    "topics": {
+      "title": "Popular Topics",
+      "booking": "Booking & Payments",
+      "modifications": "Tour Modifications",
+      "requirements": "Travel Requirements",
+      "cancellation": "Cancellation Policy",
+      "group": "Group Bookings"
+    }
+  },
+
+  "footer": {
+    "companyName": "EGYPET_RA TOURS",
+    "companyDescription": "Discover the world's most amazing destinations with our expertly crafted tours and unforgettable experiences.",
+    "quickLinks": "Quick Links",
+    "links": {
+      "home": "Home",
+      "tours": "Tours",
+      "about": "About Us",
+      "contact": "Contact",
+      "bookings": "My Bookings"
+    },
+    "tourCategories": "Tour Categories",
+    "tours": {
+      "beach": "Beach Tours",
+      "adventure": "Adventure Tours",
+      "cultural": "Cultural Tours",
+      "wildlife": "Wildlife Tours",
+      "city": "City Tours"
+    },
+    "contactInfo": "Contact Info",
+    "contact": {
+      "phone": "+20 109 370 6046",
+      "email": "mimmosafari56@gmail.com",
+      "address": {
+        "line1": "123 Adventure Street",
+        "line2": "Travel City, TC 12345"
+      }
+    },
+    "copyright": "© 2024 EGYPET_RA TOURS. All rights reserved. | Privacy Policy | Terms of Service"
+  }
+
+   , 
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "loading_chat": "Loading chat...",
+  "sign_in_required": "Sign in required",
+  "sign_in_to_access_chat": "Please sign in to access the chat",
+  "sign_in": "Sign In",
+  "admin_chat": "Admin Chat",
+  "customer_support": "Customer Support",
+  "manage_customer_messages": "Manage customer messages",
+  "get_help_with_bookings": "Get help with your bookings",
+  "connected": "Connected",
+  "disconnected": "Disconnected",
+  "chat_messages": "Chat Messages",
+  "total_messages": "Total Messages",
+  "unknown_user": "Unknown User",
+  "admin": "Admin",
+  "no_messages_yet": "No messages yet",
+  "admin_no_messages_yet": "You have not received any messages yet",
+  "customer_no_messages_yet": "You have not sent any messages yet",
+  "reply_to_customer": "Type your reply...",
+  "type_your_message": "Type your message...",
+  "enter_to_send_shift_enter_new_line": "Press Enter to send, Shift + Enter for new line",
+  "online": "Online",
+  "offline": "Offline",
+  "real_time_messaging_active": "Real-time messaging active",
+  "reconnecting": "Reconnecting...",
+  "user": "User",
+  "need_help": "Need Help?",
+  "call_us": "Call us",
+  "email_us": "Email us",
+  "chat_stats": "Chat Stats",
+  "from_customers": "From Customers",
+  "from_admins": "From Admins"
+
+}
