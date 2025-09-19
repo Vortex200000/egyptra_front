@@ -608,12 +608,14 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/hooks/useAuth";
+
+// Fixed WebSocket URL generation
 const getWebSocketURL = () => {
   const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-  const host = window.location.host;
-  return `${protocol}//${host}/ws/chat/`;
+  // Use your Redis WebSocket endpoint but with correct protocol
+  const wsHost = API_URL;
+  return `${wsHost}/ws/chat/`;
 };
-const WS_URL = "ws://4ig3t_xSGHqlAnC9PtwrtqG9gmLU_ZADVwJn_oDLUrKJDvvv7mgEPqLdWHB2gRZT@egypt-ra-5303.redis.c.osc-fr1.scalingo-dbs.com:32758/ws/chat/"; // WebSocket URL
 
 interface Message {
   id: string | number;
@@ -635,20 +637,35 @@ const Chat = () => {
   // State management
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]); // Initialize as empty array
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Changed: Don't start with loading true
   const [sending, setSending] = useState(false);
   const [connected, setConnected] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false); // Add auth check state
   const role = localStorage.getItem("role");
+
+  // Check authentication first
+  useEffect(() => {
+    // Simulate auth check completion
+    const timer = setTimeout(() => {
+      setAuthChecked(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   // Initialize WebSocket connection
   useEffect(() => {
-    if (!user) return;
+    if (!authChecked || !user) return;
 
     const token = localStorage.getItem("access");
     if (!token) return;
 
-    // Connect to WebSocket
-    wsRef.current = new WebSocket(`${WS_URL}?token=${token}`);
+    // Load existing messages first
+    loadMessages();
+
+    // Connect to WebSocket with correct protocol
+    const wsUrl = getWebSocketURL();
+    wsRef.current = new WebSocket(`${wsUrl}?token=${token}`);
 
     wsRef.current.onopen = () => {
       console.log("WebSocket connected");
@@ -681,15 +698,12 @@ const Chat = () => {
       setConnected(false);
     };
 
-    // Load existing messages
-    loadMessages();
-    scrollToBottom();
     return () => {
       if (wsRef.current) {
         wsRef.current.close();
       }
     };
-  }, [user]);
+  }, [user, authChecked]);
 
   const loadMessages = async () => {
     try {
@@ -842,7 +856,8 @@ const Chat = () => {
     }, {});
   }, [messages]);
 
-  if (loading) {
+  // Show loading only when auth is being checked or messages are being loaded
+  if (!authChecked || (authChecked && user && loading)) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -853,7 +868,8 @@ const Chat = () => {
     );
   }
 
-  if (!user) {
+  // Show sign in required when auth check is complete but no user
+  if (authChecked && !user) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="w-full max-w-md">
