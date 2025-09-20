@@ -134,16 +134,6 @@ const Chat = () => {
   }, [user, authChecked, isAdmin]);
 
   const handleNewMessage = (messageData: Message, conversationId: number, isNewUserMessage?: boolean) => {
-    // Always update messages if viewing this conversation
-    if (selectedConversation === conversationId || (!isAdmin && !selectedConversation)) {
-      setMessages((prev) => {
-        const exists = prev.some((msg) => msg.id === messageData.id);
-        if (exists) return prev;
-        return [...prev, messageData];
-      });
-      scrollToBottom();
-    }
-
     // Update conversations list for admin
     if (isAdmin) {
       setConversations((prev) => {
@@ -158,11 +148,20 @@ const Chat = () => {
             : conv
         );
         
-        // Sort conversations by last message time
         return updatedConversations.sort((a, b) => 
           new Date(b.last_message_at).getTime() - new Date(a.last_message_at).getTime()
         );
       });
+    }
+  
+    // Update messages array only if the conversation is currently selected
+    if (selectedConversation === conversationId) {
+      setMessages((prev) => {
+        const exists = prev.some((msg) => msg.id === messageData.id);
+        if (exists) return prev;
+        return [...prev, messageData];
+      });
+      scrollToBottom();
     }
   };
 
