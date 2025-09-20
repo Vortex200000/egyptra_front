@@ -24,7 +24,8 @@ import { useAuth } from "@/hooks/useAuth";
 
 // WebSocket URL
 const getWebSocketURL = () => {
-
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const host = API_URL.replace('http://', '').replace('https://', '');
   return `${API_URL}/ws/chat/`;
 };
 
@@ -72,7 +73,7 @@ const Chat = () => {
   const [authChecked, setAuthChecked] = useState(false);
   
   const role = localStorage.getItem("role");
-  const isAdmin = role === "admin";
+  const isAdmin =  role === "admin";
 
   // Check authentication
   useEffect(() => {
@@ -134,6 +135,16 @@ const Chat = () => {
   }, [user, authChecked, isAdmin]);
 
   const handleNewMessage = (messageData: Message, conversationId: number, isNewUserMessage?: boolean) => {
+    // Always update messages if viewing this conversation
+    if (selectedConversation === conversationId || (!isAdmin && !selectedConversation)) {
+      setMessages((prev) => {
+        const exists = prev.some((msg) => msg.id === messageData.id);
+        if (exists) return prev;
+        return [...prev, messageData];
+      });
+      scrollToBottom();
+    }
+
     // Update conversations list for admin
     if (isAdmin) {
       setConversations((prev) => {
@@ -148,20 +159,11 @@ const Chat = () => {
             : conv
         );
         
+        // Sort conversations by last message time
         return updatedConversations.sort((a, b) => 
           new Date(b.last_message_at).getTime() - new Date(a.last_message_at).getTime()
         );
       });
-    }
-  
-    // Update messages array only if the conversation is currently selected
-    if (selectedConversation === conversationId) {
-      setMessages((prev) => {
-        const exists = prev.some((msg) => msg.id === messageData.id);
-        if (exists) return prev;
-        return [...prev, messageData];
-      });
-      scrollToBottom();
     }
   };
 
@@ -649,7 +651,7 @@ const Chat = () => {
             
             {/* Chat Interface */}
             <div className="lg:col-span-3">
-              <Card className="h-[600px] shadow-glow flex flex-col">
+              <Card className="h-[calc(100vh-200px)] shadow-glow flex flex-col">
                 <CardHeader className="bg-gradient-ocean text-white flex-shrink-0">
                   <CardTitle className="flex items-center text-primary-foreground">
                     <MessageCircle className="h-5 w-5 mr-2" />
@@ -657,7 +659,7 @@ const Chat = () => {
                   </CardTitle>
                 </CardHeader>
 
-                <CardContent className="flex-1 p-0 flex flex-col min-h-0">
+                <div className="flex-1 min-h-0 flex flex-col">
                   <ScrollArea className="flex-1 px-6 py-4">
                     <div className="space-y-6">
                       {Object.entries(groupedMessages).map(([date, dayMessages]) => (
@@ -760,12 +762,12 @@ const Chat = () => {
                       Press Enter to send, Shift+Enter for new line
                     </p>
                   </div>
-                </CardContent>
+                </div>
               </Card>
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-4">
+            <div className="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto">
               <Card className="shadow-card">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-2">
