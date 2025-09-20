@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
 import { MapPin, Mail, Lock, UserPlus, LogIn, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import EyeOfRaAnkh2 from "../assets/icons/ra.png";
 
 const Auth = () => {
   // Sign in fields
@@ -72,7 +73,9 @@ const Auth = () => {
 
       <section className="bg-gradient-sky py-12">
         <div className="container mx-auto px-4 text-center">
-          <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+          {/* <MapPin className="h-16 w-16 text-primary mx-auto mb-4" /> */}
+          <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-8 w-8" />
+
           <h1 className="text-4xl font-bold text-foreground mb-2">
             {t("auth.welcomeTitle")}
           </h1>
