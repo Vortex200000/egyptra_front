@@ -709,7 +709,7 @@ const Booking = () => {
       !formData.firstName ||
       !formData.lastName ||
       !formData.email ||
-      !formData.selectedDate
+      !formData.selectedDate || !formData.phone
     ) {
       toast({
         title: t("booking.missing_info"),
@@ -736,6 +736,7 @@ const Booking = () => {
           number_of_travelers: travelers,
           preferred_date: formData.selectedDate,
           preferred_time: formData.selectedTime,
+          phone : formData.phone
         }),
       });
 
