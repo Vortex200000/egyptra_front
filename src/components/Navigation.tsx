@@ -104,7 +104,7 @@ import {
   EyeIcon,
 } from "lucide-react";
 import EyeOfRaAnkh from "../assets/icons/Eye-of-Ra-Ankh.svg";
-import EyeOfRaAnkh2 from "../assets/icons/ra.png";
+import EyeOfRaAnkh2 from "../assets/icons/nata.png";
 
 import {
   DropdownMenu,
@@ -182,7 +182,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-8 w-8" />
+            <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-20 w-20  object-contain" />
             <span className="text-xl font-bold text-black">
               {t("brand.name")}
             </span>

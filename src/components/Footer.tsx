@@ -9,7 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import EyeOfRaAnkh2 from "../assets/icons/ra.png";
+import EyeOfRaAnkh2 from "../assets/icons/nata.png";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -30,7 +30,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-            <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-8 w-8" />
+            <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-20 w-20  object-contain" />
+
               <span className="text-lg font-bold bg-clip-text">
                 {t("footer.companyName")}
               </span>
