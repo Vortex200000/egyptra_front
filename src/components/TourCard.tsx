@@ -178,7 +178,7 @@ const TourCard = ({ tour }: TourCardProps) => {
 
           <div className="flex items-center justify-between pt-2">
             <div className="text-2xl font-bold text-primary">
-              ${parseFloat(tour.price).toLocaleString()}
+            €{parseFloat(tour.price).toLocaleString()}
             </div>
             <div className="space-x-2">
               <Link to={`/tour/${tour.id}`}>
