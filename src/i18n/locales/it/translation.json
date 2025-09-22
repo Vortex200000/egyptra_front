@@ -133,6 +133,9 @@
     "loading": "Caricamento dettagli del tour...",
     "back": "Torna ai tour",
     "overview": "Panoramica del tour",
+    "excludes" : "Esclude" ,
+    "requirements" : "Requisiti" , 
+    
     "duration": "Durata",
     "group_size": "Dimensione del gruppo",
     "group_size_value": "Fino a {{count}} persone",

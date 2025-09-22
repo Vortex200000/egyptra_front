@@ -131,9 +131,12 @@
 
   "tour": {
     "loading": "Loading tour details...",
+    "excludes" : "Excludes" , 
     "back": "Back to Tours",
     "overview": "Tour Overview",
     "duration": "Duration",
+    "requirements" : "Requirements" , 
+
     "group_size": "Group Size",
     "group_size_value": "Up to {{count}}",
     "reviews": "{{count}} Reviews",

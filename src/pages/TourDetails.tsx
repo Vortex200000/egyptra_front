@@ -344,6 +344,8 @@ interface Tour {
   }>;
   highlights: string[];
   itinerary: string[];
+  excludes: string[];
+  requirements : string;
   price: number;
 }
 
@@ -352,6 +354,15 @@ const TourDetails = () => {
   const [tour, setTour] = useState<Tour | null>(null);
   const [loading, setLoading] = useState(true);
   const { t, i18n } = useTranslation();
+
+  const processRequirements = (requirementsString) => {
+    if (!requirementsString) return [];
+    
+    return requirementsString
+      .split(/\r?\n/) // Split by line breaks (handles both \n and \r\n)
+      .map(item => item.trim()) // Remove whitespace
+      .filter(item => item.length > 0); // Remove empty items
+  };
 
   useEffect(() => {
     const fetchTour = async () => {
@@ -374,6 +385,9 @@ const TourDetails = () => {
           availableDates: data.availability_slots || [],
           highlights: data.includes_list || [],
           itinerary: data.includes_list || [],
+          excludes:data.excludes_list || [] , 
+          requirements : data.requirements,
+
           price: parseFloat(data.price),
         };
 
@@ -540,6 +554,44 @@ const TourDetails = () => {
                   ))}
                 </div>
               </CardContent>
+              
+              <CardHeader>
+                <CardTitle className="text-2xl">{t("tour.excludes")}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {tour.excludes.map((day, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start space-x-4 p-4 bg-gradient-sky rounded-lg"
+                    >
+                      <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div className="text-muted-foreground">{day}</div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+
+              <CardHeader>
+  <CardTitle className="text-2xl">{t("tour.requirements")}</CardTitle>
+</CardHeader>
+<CardContent>
+  <div className="space-y-4">
+    {processRequirements(tour.requirements).map((requirement, index) => (
+      <div
+        key={index}
+        className="flex items-start space-x-4 p-4 bg-gradient-sky rounded-lg"
+      >
+        <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+          {index + 1}
+        </div>
+        <div className="text-muted-foreground">{requirement}</div>
+      </div>
+    ))}
+  </div>
+</CardContent>
             </Card>
           </div>
 
