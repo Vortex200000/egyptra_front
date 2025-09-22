@@ -575,23 +575,23 @@ const TourDetails = () => {
               </CardContent>
 
               <CardHeader>
-  <CardTitle className="text-2xl">{t("tour.requirements")}</CardTitle>
-</CardHeader>
-<CardContent>
-  <div className="space-y-4">
-    {processRequirements(tour.requirements).map((requirement, index) => (
-      <div
-        key={index}
-        className="flex items-start space-x-4 p-4 bg-gradient-sky rounded-lg"
-      >
-        <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold flex-shrink-0">
-          {index + 1}
-        </div>
-        <div className="text-muted-foreground">{requirement}</div>
-      </div>
-    ))}
-  </div>
-</CardContent>
+              <CardTitle className="text-2xl">{t("tour.requirements")}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {processRequirements(tour.requirements).map((requirement, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start space-x-4 p-4 bg-gradient-sky rounded-lg"
+                  >
+                    <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <div className="text-muted-foreground">{requirement}</div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
             </Card>
           </div>
 
@@ -619,7 +619,7 @@ const TourDetails = () => {
                       >
                         <div className="font-medium">
                           {new Date(slot.date).toLocaleDateString(
-                            i18n.language, // ✅ dynamic locale
+                            i18n.language, 
                             {
                               weekday: "long",
                               year: "numeric",

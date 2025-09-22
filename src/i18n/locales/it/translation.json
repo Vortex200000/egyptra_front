@@ -135,7 +135,8 @@
     "overview": "Panoramica del tour",
     "excludes" : "Esclude" ,
     "requirements" : "Requisiti" , 
-    
+    "traveler" : "Viaggiatore" ,
+    "travelers" : "Viaggiatori" , 
     "duration": "Durata",
     "group_size": "Dimensione del gruppo",
     "group_size_value": "Fino a {{count}} persone",

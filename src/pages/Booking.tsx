@@ -626,6 +626,7 @@ interface Tour {
   category: string;
   duration: string;
   maxCapacity: number;
+  minCapacity :number ;
   rating: number;
   reviews: number;
   availableDates: Array<{
@@ -786,6 +787,8 @@ const Booking = () => {
           category: data.category?.name || "Uncategorized",
           duration: data.duration,
           maxCapacity: data.max_persons,
+          minCapacity: data.min_persons,
+
           rating: parseFloat(data.rating),
           reviews: data.review_count,
           availableDates: (data.availability_slots || [])
@@ -978,22 +981,20 @@ const Booking = () => {
                         <SelectTrigger>
                           <SelectValue placeholder={t("common.select")} />
                         </SelectTrigger>
+                        {/* <SelectContent> */}
                         <SelectContent>
-                          {Array.from(
-                            { length: Math.min(tour.maxCapacity, 10) },
-                            (_, i) => (
-                              <SelectItem
-                                key={i + 1}
-                                value={(i + 1).toString()}
-                              >
-                                {i + 1}{" "}
-                                {i + 1 === 1
-                                  ? t("tours.traveler")
-                                  : t("tours.travelers")}
+                        {Array.from(
+                          { length: tour.maxCapacity - tour.minCapacity + 1 }, // total options
+                          (_, i) => {
+                            const value = tour.minCapacity + i; // start from minCapacity
+                            return (
+                              <SelectItem key={value} value={value.toString()}>
+                                {value} {value === 1 ? t("tour.traveler") : t("tour.travelers")}
                               </SelectItem>
-                            )
-                          )}
-                        </SelectContent>
+                            );
+                          }
+                        )}
+                      </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">

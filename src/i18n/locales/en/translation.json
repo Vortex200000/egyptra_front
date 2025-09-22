@@ -136,6 +136,9 @@
     "overview": "Tour Overview",
     "duration": "Duration",
     "requirements" : "Requirements" , 
+    "traveler" : "traveler" ,
+    "travelers" : "travelers" , 
+    
 
     "group_size": "Group Size",
     "group_size_value": "Up to {{count}}",
