@@ -38,7 +38,7 @@
       "learn_more": "Learn More"
     },
     "features": {
-      "title": "Why Choose True EGYPET_RA TOURS ?",
+      "title": "Why Choose True NATA  STORIA TRAVEL ?",
       "subtitle": "We're committed to providing you with exceptional travel experiences that exceed your expectations.",
       "expert_guides": "Expert Guides",
       "expert_guides_desc": "Professional local guides with deep knowledge of destinations and cultures.",
@@ -99,7 +99,7 @@
   },
 
   "brand": {
-    "name": "EGYPET_RA TOURS"
+    "name": "NATA  STORIA TRAVEL"
   },
   "tours": {
     "header": {
@@ -137,7 +137,7 @@
     "duration": "Duration",
     "requirements" : "Requirements" , 
     "traveler" : "traveler" ,
-    "travelers" : "travelers" , 
+    "travelers" : "traveler" , 
     
 
     "group_size": "Group Size",
@@ -168,7 +168,7 @@
     "signIn": "Sign In",
     "signUp": "Register",
     "signOut": "Sign Out",
-    "welcomeTitle": "Welcome to EGYPET_RA TOURS",
+    "welcomeTitle": "Welcome to NATA STORIA TRAVEL",
     "welcomeSubtitle": "Sign in to book amazing adventures",
     "signInTab": "Sign In",
     "signUpTab": "Sign Up",
@@ -194,12 +194,12 @@
 
   "about": {
     "hero": {
-      "title": "About EGYPET_RA TOURS",
+      "title": "About NATA  STORIA TRAVEL",
       "subtitle": "We're passionate about creating unforgettable travel experiences that connect you with the world's most amazing destinations and cultures."
     },
     "story": {
       "title": "Our Story",
-      "p1": "Founded in 2006 by a group of passionate travelers, EGYPET_RA TOURS was born from a simple belief: that travel has the power to transform lives, broaden perspectives, and create lasting memories. What started as a small local tour company has grown into a global platform connecting adventurous souls with extraordinary experiences around the world.",
+      "p1": "Founded in 2006 by a group of passionate travelers, NATA  STORIA TRAVEL was born from a simple belief: that travel has the power to transform lives, broaden perspectives, and create lasting memories. What started as a small local tour company has grown into a global platform connecting adventurous souls with extraordinary experiences around the world.",
       "p2": "Today, we've helped over 50,000 travelers discover hidden gems, immerse themselves in local cultures, and create stories they'll share for a lifetime. Our commitment remains the same: to provide authentic, sustainable, and transformative travel experiences that benefit both our travelers and the communities we visit."
     },
     "values": {
@@ -289,7 +289,7 @@
 
   "chat": {
     "bot": {
-      "welcome": "Hello! Welcome to EGYPET_RA TOURS live chat support. I'm here to help you with any questions about our tours, bookings, or travel advice. How can I assist you today?",
+      "welcome": "Hello! Welcome to NATA  STORIA TRAVEL live chat support. I'm here to help you with any questions about our tours, bookings, or travel advice. How can I assist you today?",
       "responses": {
         "1": "Thank you for your question! Let me help you with that. Can you provide more details about which tour or destination you're interested in?",
         "2": "That's a great question! Our travel experts are here to help. Are you looking for adventure tours, cultural experiences, or relaxing beach getaways?",
@@ -335,7 +335,7 @@
   },
 
   "footer": {
-    "companyName": "EGYPET_RA TOURS",
+    "companyName": "NATA  STORIA TRAVEL",
     "companyDescription": "Discover the world's most amazing destinations with our expertly crafted tours and unforgettable experiences.",
     "quickLinks": "Quick Links",
     "links": {
@@ -363,7 +363,7 @@
         "line2": "Travel City, TC 12345"
       }
     },
-    "copyright": "© 2024 EGYPET_RA TOURS. All rights reserved. | Privacy Policy | Terms of Service"
+    "copyright": "© 2024 NATA  STORIA TRAVEL. All rights reserved. | Privacy Policy | Terms of Service"
   }
 
    , 
