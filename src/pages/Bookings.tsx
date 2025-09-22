@@ -491,6 +491,8 @@ interface AdminBooking {
   booking_reference: string;
   customer_name: string;
   customer_email: string;
+  phone_num: string;
+
   tour_title: string;
   tour_location: string;
   preferred_date: string;
@@ -659,6 +661,9 @@ const Bookings = () => {
       if (!res.ok) throw new Error("Failed to fetch admin bookings");
 
       const data = await res.json();
+      // console.log(data.results )
+      // console.log(data.bookings )
+
       setAdminBookings(data.results || data.bookings || []);
     } catch (error) {
       console.error(error);
@@ -993,6 +998,13 @@ const Bookings = () => {
                         <div>
                           <div className="font-medium">Customer</div>
                           <div className="text-muted-foreground">{booking.customer_name}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <Phone className="h-4 w-4 mr-2 text-primary" />
+                        <div>
+                          <div className="font-medium">Phone</div>
+                          <div className="text-muted-foreground">{booking.phone_num}</div>
                         </div>
                       </div>
 
