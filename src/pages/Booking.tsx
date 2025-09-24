@@ -709,7 +709,9 @@ const Booking = () => {
       !formData.firstName ||
       !formData.lastName ||
       !formData.email ||
-      !formData.selectedDate || !formData.phone
+      // !formData.selectedDate 
+      
+      !formData.phone
     ) {
       toast({
         title: t("booking.missing_info"),
@@ -734,8 +736,8 @@ const Booking = () => {
           last_name: formData.lastName,
           email: formData.email,
           number_of_travelers: travelers,
-          preferred_date: formData.selectedDate,
-          preferred_time: formData.selectedTime,
+          // preferred_date: formData.selectedDate,
+          // preferred_time: formData.selectedTime,
           phone : formData.phone
         }),
       });
@@ -1000,9 +1002,9 @@ const Booking = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="selectedDate">
-                        {t("booking.preferred_date")} *
+                        {t("booking.preferred_date")} 
                       </Label>
-                      <Select
+                      {/* <Select
                         value={
                           formData.selectedDate
                             ? `${formData.selectedDate}|${formData.selectedTime}`
@@ -1036,7 +1038,7 @@ const Booking = () => {
                             </SelectItem>
                           ))}
                         </SelectContent>
-                      </Select>
+                      </Select> */}
                     </div>
                   </div>
                   <div className="space-y-2">
