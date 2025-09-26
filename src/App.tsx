@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Chat from "./pages/Chat";
 import Bookings from "./pages/Bookings";
 import NotFound from "./pages/NotFound";
+import Reviews from "./pages/Reviews";
 import { AuthProvider } from "@/hooks/useAuth";
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Home />} />
 
             <Route path="/auth" element={<Auth />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/tours" element={<Tours />} />
             <Route path="/tour/:id" element={<TourDetails />} />
             <Route path="/booking/:id" element={<Booking />} />

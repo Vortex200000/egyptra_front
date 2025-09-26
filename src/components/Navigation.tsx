@@ -139,6 +139,7 @@ const Navigation = () => {
     { name: t("navigation.contact", "Contact"), path: "/contact" },
     { name: t("navigation.chat", "Chat"), path: "/chat" },
     { name: t("navigation.bookings", "Bookings"), path: "/bookings" },
+    { name: "Reviews", path: "/reviews" },
   ];
 
   const changeLanguage = (languageCode: string) => {
@@ -182,7 +183,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-20 w-20  object-contain" />
+            <img
+              src={EyeOfRaAnkh2}
+              alt="Eye of Ra"
+              className="h-20 w-20  object-contain"
+            />
             <span className="text-xl font-bold text-black">
               {t("brand.name")}
             </span>
