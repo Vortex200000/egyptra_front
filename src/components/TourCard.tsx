@@ -92,6 +92,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Star, Users } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
+import StarRating from "./StarRating";
 export interface ApiTour {
   id: string;
   title: string;
@@ -144,7 +145,12 @@ const TourCard = ({ tour }: TourCardProps) => {
         <div className="absolute top-4 right-4 bg-white/90 rounded-full px-2 py-1 flex items-center text-sm">
           <Star className="h-3 w-3 text-yellow-500 fill-yellow-500 mr-1" />
           <span className="text-xs font-medium">
-            {parseFloat(tour.rating).toFixed(1)}
+            <StarRating
+              rating={parseFloat(tour.rating)}
+              size="sm"
+              showRating
+              className="text-xs"
+            />
           </span>
         </div>
       </div>
@@ -178,7 +184,7 @@ const TourCard = ({ tour }: TourCardProps) => {
 
           <div className="flex items-center justify-between pt-2">
             <div className="text-2xl font-bold text-primary">
-            €{parseFloat(tour.price).toLocaleString()}
+              €{parseFloat(tour.price).toLocaleString()}
             </div>
             <div className="space-x-2">
               <Link to={`/tour/${tour.id}`}>
