@@ -237,7 +237,7 @@ const TourDetails = () => {
                       {t("tour.reviews", { count: tour.reviews })}
                     </div>
                   </div>
-                  <div className="text-center p-4 bg-gradient-sky rounded-lg">
+                  {/* <div className="text-center p-4 bg-gradient-sky rounded-lg">
                     <Calendar className="h-8 w-8 text-primary mx-auto mb-2" />
                     <div className="font-semibold">
                       {tour.availableDates.length}
@@ -245,7 +245,7 @@ const TourDetails = () => {
                     <div className="text-sm text-muted-foreground">
                       {t("tour.available_dates")}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </CardContent>
             </Card>
@@ -406,7 +406,7 @@ const TourDetails = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-center">
                   <span className="text-3xl font-bold text-primary">
-                    ${tour.price.toLocaleString()}
+                    €{tour.price.toLocaleString()}
                   </span>
                   <span className="text-lg text-muted-foreground ml-2">
                     {t("tour.per_person")}
