@@ -140,7 +140,7 @@ interface AuthContextType {
     firstName: string,
     lastName: string,
     confirmPassword: string
-  ) => Promise<void>;
+  ) => Promise<any>;
   signIn: (
     email: string,
     password: string
@@ -238,12 +238,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         title: "Account created",
         description: "You can now sign in.",
       });
+      return { success: true, error: null };
     } catch (error: any) {
       toast({
         title: "Sign Up Failed",
         description: error.message,
         variant: "destructive",
       });
+      return { success: false, error };
     }
   };
 

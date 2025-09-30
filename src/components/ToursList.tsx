@@ -128,7 +128,7 @@ interface Props {
 
 const TourList = ({
   searchTerm = "",
-  category = "all", // ✅ default lowercase
+  category = "all", 
   sortBy = "name",
   limit,
 }: Props) => {
@@ -140,7 +140,7 @@ const TourList = ({
       try {
         const res = await fetch(`${API_URL}/api/tours/`);
         const data = await res.json();
-        setTours(data.results || data); // ✅ support both paginated and plain list
+        setTours(data.results || data); 
       } catch (err) {
         console.error("Failed to fetch tours", err);
       } finally {

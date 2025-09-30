@@ -5,10 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
-import { MapPin, Mail, Lock, UserPlus, LogIn, User } from "lucide-react";
+import { MapPin, Mail, Lock, UserPlus, LogIn, User, CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import EyeOfRaAnkh2 from "../assets/icons/nata.png";
 
@@ -26,6 +27,9 @@ const Auth = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("signin");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  
   const { signUp, signIn, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,12 +43,22 @@ const Auth = () => {
     }
   }, [user, navigate, location]);
 
+  // Auto-hide success message after 5 seconds
+  useEffect(() => {
+    if (showSuccessMessage) {
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessMessage]);
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (signUpPassword !== confirmPassword) return;
 
     setIsLoading(true);
-    await signUp(
+    const result = await signUp(
       signUpEmail,
       username,
       signUpPassword,
@@ -53,6 +67,24 @@ const Auth = () => {
       confirmPassword
     );
     setIsLoading(false);
+
+    // Check if signup was successful
+    if (result && !result.error) {
+      // Clear signup form
+      setSignUpEmail("");
+      setUsername("");
+      setFirstName("");
+      setLastName("");
+      setSignUpPassword("");
+      setConfirmPassword("");
+
+      // Switch to sign in tab and show success message
+      setActiveTab("signin");
+      setShowSuccessMessage(true);
+
+      // Pre-fill email in sign-in form
+      setEmail(signUpEmail);
+    }
   };
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -73,9 +105,11 @@ const Auth = () => {
 
       <section className="bg-gradient-sky py-12">
         <div className="container mx-auto px-4 text-center">
-          {/* <MapPin className="h-16 w-16 text-primary mx-auto mb-4" /> */}
-          <img src={EyeOfRaAnkh2} alt="Eye of Ra" className="h-20 w-20 text-primary mx-auto mb-4 justify-center object-cover" />
-
+          <img 
+            src={EyeOfRaAnkh2} 
+            alt="Eye of Ra" 
+            className="h-20 w-20 text-primary mx-auto mb-4 justify-center object-cover" 
+          />
           <h1 className="text-4xl font-bold text-foreground mb-2">
             {t("auth.welcomeTitle")}
           </h1>
@@ -86,7 +120,7 @@ const Auth = () => {
       </section>
 
       <div className="container mx-auto px-4 py-12 max-w-md">
-        <Tabs defaultValue="signin" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="signin">{t("auth.signInTab")}</TabsTrigger>
             <TabsTrigger value="signup">{t("auth.signUpTab")}</TabsTrigger>
@@ -94,6 +128,18 @@ const Auth = () => {
 
           {/* SIGN IN */}
           <TabsContent value="signin">
+            {showSuccessMessage && (
+              <Alert className="mb-4 border-green-500 bg-green-50 dark:bg-green-950">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+                <AlertTitle className="text-green-800 dark:text-green-200 font-semibold">
+                  Account Created Successfully!
+                </AlertTitle>
+                <AlertDescription className="text-green-700 dark:text-green-300">
+                  Welcome aboard! You can now sign in with your credentials.
+                </AlertDescription>
+              </Alert>
+            )}
+            
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
