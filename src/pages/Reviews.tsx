@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
@@ -41,35 +42,22 @@ interface Tour {
 }
 
 const Reviews = () => {
+  const { t } = useTranslation();
   const [sortBy, setSortBy] = useState("newest");
   const [filterBy, setFilterBy] = useState("all");
   const [reviews, setReviews] = useState<Review[]>([]);
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch all reviews from API
   useEffect(() => {
     const fetchAllData = async () => {
       try {
         setLoading(true);
-
-        // Fetch all tours first to get tour info
         const toursResponse = await fetch(`${API_URL}/api/tours/`);
         const toursData = await toursResponse.json();
         setTours(toursData.results || toursData);
 
-        // Collect all reviews from all tours
         const allReviews: Review[] = [];
-
-        // Create a map of tour IDs to tour info for quick lookup
-        const tourMap = new Map();
-        (toursData.results || toursData).forEach((tour: Tour) => {
-          tourMap.set(tour.id, {
-            name: tour.title,
-            image: tour.cover_photo,
-          });
-        });
-
         for (const tour of toursData.results || toursData) {
           try {
             const tourResponse = await fetch(
@@ -85,10 +73,10 @@ const Reviews = () => {
                     tour_image: tourData.cover_photo,
                     date: new Date(review.created_at)
                       .toISOString()
-                      .split("T")[0], // Format date for compatibility
+                      .split("T")[0],
                     userName: review.user_name,
                     content: review.comment,
-                    helpful: 0, // Default value since not in API
+                    helpful: 0,
                     avatar:
                       review.user_avatar ||
                       review.user_name
@@ -105,7 +93,6 @@ const Reviews = () => {
             console.error(`Error fetching reviews for tour ${tour.id}:`, error);
           }
         }
-
         setReviews(allReviews);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -117,14 +104,12 @@ const Reviews = () => {
     fetchAllData();
   }, []);
 
-  // Calculate statistics
   const averageRating =
     reviews.length > 0
       ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
       : 0;
   const totalReviews = reviews.length;
 
-  // Filter and sort reviews
   const filteredAndSortedReviews = reviews
     .filter((review) => {
       if (filterBy === "all") return true;
@@ -145,14 +130,11 @@ const Reviews = () => {
           );
         case "highest-rated":
           return b.rating - a.rating;
-        // case "most-helpful":
-        //   return (b.helpful || 0) - (a.helpful || 0);
         default:
           return 0;
       }
     });
 
-  // Calculate rating distribution
   const ratingDistribution = [5, 4, 3, 2, 1].map((rating) => ({
     rating,
     count: reviews.filter((r) => r.rating === rating).length,
@@ -170,7 +152,9 @@ const Reviews = () => {
         <div className="container mx-auto px-4 py-20 flex items-center justify-center">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
-            <p className="text-lg text-muted-foreground">Loading reviews...</p>
+            <p className="text-lg text-muted-foreground">
+              {t("loadingReviews")}
+            </p>
           </div>
         </div>
       </div>
@@ -182,24 +166,22 @@ const Reviews = () => {
       <Navigation />
 
       <main className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-playfair font-bold text-foreground mb-4">
-            Guest Reviews
+            {t("guestReviews")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover what our travelers are saying about their Egyptian
-            adventures
+            {t("guestReviewsSubtitle")}
           </p>
         </div>
 
-        {/* Statistics Cards */}
+        {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card className="text-center">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-center gap-2">
                 <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                Rating
+                {t("rating")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -218,7 +200,7 @@ const Reviews = () => {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-center gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                Reviews
+                {t("reviews")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -226,7 +208,7 @@ const Reviews = () => {
                 {totalReviews}
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Total reviews
+                {t("totalReviews")}
               </p>
             </CardContent>
           </Card>
@@ -235,7 +217,7 @@ const Reviews = () => {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-center gap-2">
                 <Award className="h-5 w-5 text-accent" />
-                Excellence
+                {t("excellence")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -250,7 +232,7 @@ const Reviews = () => {
                 %
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                4+ star ratings
+                {t("fourPlusStars")}
               </p>
             </CardContent>
           </Card>
@@ -259,7 +241,7 @@ const Reviews = () => {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-center gap-2">
                 <TrendingUp className="h-5 w-5 text-secondary" />
-                Tours
+                {t("navigation.tours")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -267,7 +249,7 @@ const Reviews = () => {
                 {tours.length}
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Available tours
+                {t("availableTours")}
               </p>
             </CardContent>
           </Card>
@@ -275,46 +257,49 @@ const Reviews = () => {
 
         <Tabs defaultValue="all-reviews" className="w-full">
           <TabsList className="grid w-full md:w-auto grid-cols-2 md:flex">
-            <TabsTrigger value="all-reviews">All Reviews</TabsTrigger>
-            <TabsTrigger value="rating-breakdown">Rating Breakdown</TabsTrigger>
+            <TabsTrigger value="all-reviews">{t("allReviews")}</TabsTrigger>
+            <TabsTrigger value="rating-breakdown">
+              {t("ratingBreakdown")}
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="all-reviews" className="space-y-6">
-            {/* Filters */}
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Select value={sortBy} onValueChange={setSortBy}>
                   <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Sort by" />
+                    <SelectValue placeholder={t("sortBy")} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="newest">Newest First</SelectItem>
-                    <SelectItem value="oldest">Oldest First</SelectItem>
-                    <SelectItem value="highest-rated">Highest Rated</SelectItem>
-                    {/* <SelectItem value="most-helpful">Most Helpful</SelectItem> */}
+                    <SelectItem value="newest">{t("newestFirst")}</SelectItem>
+                    <SelectItem value="oldest">{t("oldestFirst")}</SelectItem>
+                    <SelectItem value="highest-rated">
+                      {t("highestRated")}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
 
                 <Select value={filterBy} onValueChange={setFilterBy}>
                   <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Filter by rating" />
+                    <SelectValue placeholder={t("filterByRating")} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Ratings</SelectItem>
-                    <SelectItem value="5-star">5 Stars</SelectItem>
-                    <SelectItem value="4-star">4 Stars</SelectItem>
-                    <SelectItem value="3-star">3 Stars</SelectItem>
+                    <SelectItem value="all">{t("allRatings")}</SelectItem>
+                    <SelectItem value="5-star">{t("fiveStars")}</SelectItem>
+                    <SelectItem value="4-star">{t("fourStars")}</SelectItem>
+                    <SelectItem value="3-star">{t("threeStars")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <p className="text-sm text-muted-foreground">
-                Showing {filteredAndSortedReviews.length} of {totalReviews}{" "}
-                reviews
+                {t("showingReviews", {
+                  count: filteredAndSortedReviews.length,
+                  total: totalReviews,
+                })}
               </p>
             </div>
 
-            {/* Reviews Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredAndSortedReviews.length > 0 ? (
                 filteredAndSortedReviews.map((review) => (
@@ -327,7 +312,7 @@ const Reviews = () => {
               ) : (
                 <div className="col-span-full text-center py-12">
                   <p className="text-lg text-muted-foreground">
-                    No reviews found matching your criteria.
+                    {t("noReviewsFound")}
                   </p>
                 </div>
               )}
@@ -337,7 +322,7 @@ const Reviews = () => {
           <TabsContent value="rating-breakdown" className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Rating Distribution</CardTitle>
+                <CardTitle>{t("ratingDistribution")}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {ratingDistribution.map(({ rating, count, percentage }) => (
@@ -360,12 +345,9 @@ const Reviews = () => {
               </CardContent>
             </Card>
 
-            {/* Tour-specific ratings */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {tours.map((tour) => {
-                const tourReviews = reviews.filter((r) => r.tour === tour.id);
                 const avgRating = parseFloat(tour.rating) || 0;
-
                 return (
                   <Card key={tour.id}>
                     <CardHeader>
@@ -375,7 +357,7 @@ const Reviews = () => {
                       <div className="flex items-center justify-between">
                         <StarRating rating={avgRating} size="sm" showRating />
                         <span className="text-sm text-muted-foreground">
-                          {tour.review_count} reviews
+                          {tour.review_count} {t("reviews")}
                         </span>
                       </div>
                       <img

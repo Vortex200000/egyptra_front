@@ -30,6 +30,7 @@
     "sort": "Sort",
     "select": "Select"
   },
+  
   "home": {
     "hero": {
       "title": "Explore Egypt's Hidden Treasures",
@@ -399,6 +400,30 @@
   "email_us": "Email us",
   "chat_stats": "Chat Stats",
   "from_customers": "From Customers",
-  "from_admins": "From Admins"
+  "from_admins": "From Admins" , 
+   "loadingReviews": "Loading reviews...",
+  "guestReviews": "Guest Reviews",
+  "guestReviewsSubtitle": "Discover what our travelers are saying about their Egyptian adventures",
+  "rating": "Rating",
+  "reviews": "Reviews",
+  "totalReviews": "Total reviews",
+  "excellence": "Excellence",
+  "fourPlusStars": "4+ star ratings",
+
+  "availableTours": "Available tours",
+  "allReviews": "All Reviews",
+  "ratingBreakdown": "Rating Breakdown",
+  "sortBy": "Sort by",
+  "newestFirst": "Newest First",
+  "oldestFirst": "Oldest First",
+  "highestRated": "Highest Rated",
+  "filterByRating": "Filter by rating",
+  "allRatings": "All Ratings",
+  "fiveStars": "5 Stars",
+  "fourStars": "4 Stars",
+  "threeStars": "3 Stars",
+  "showingReviews": "Showing {{count}} of {{total}} reviews",
+  "noReviewsFound": "No reviews found matching your criteria.",
+  "ratingDistribution": "Rating Distribution"
 
 }
